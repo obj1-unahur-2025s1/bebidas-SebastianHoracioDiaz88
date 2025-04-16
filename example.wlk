@@ -2,7 +2,6 @@ object tito {
 const peso = 70
 const inercia  = 490
 var rendimiento = 0
-method rendimiento() = rendimiento
 
 method consumir(dosisATomar, bebidaATomar){
 
