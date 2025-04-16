@@ -1,28 +1,29 @@
 object tito {
 const peso = 70
 const inercia  = 490
-var rendimiento = 0
+var velocidad = 0
 
 method consumir(dosisATomar, bebidaATomar){
 
-rendimiento = bebidaATomar.efectoPorConsumir(dosisATomar) 
+velocidad = bebidaATomar.efectoPorConsumir(dosisATomar) * inercia / peso 
 
 }
-method velocidad() = inercia * rendimiento / peso
+
+method velocidad() = velocidad
 
 }
 
 object whisky {
 method efecto() = "sueño, mareo y jaqueca"
-method efectoPorConsumir(cantidad) =  0.1 ** cantidad
+method efectoPorConsumir(dosisATomar) =  0.1 ** dosisATomar
 }
 
 object terere {
   method efecto() = "diurético, laxante y estimulante"
-  method efectoPorConsumir(cantidad) = 1.max(0.9 * cantidad) 
+  method efectoPorConsumir(dosisATomar) = 1.max(0.9 * dosisATomar) 
 }
 
 object cianuro {
   method efecto()= "muerto, llenos de abulia y de marasmo"
-  method efectoPorConsumir(cantidad) = 0
+  method efectoPorConsumir(dosisATomar) = 0
 }
